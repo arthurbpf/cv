@@ -1,0 +1,28 @@
+name: Compile LaTeX files
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install latexmk
+        run: sudo apt-get latex-mk
+
+      - name: Compiles PDF
+        run: latexmk -pdf
+        
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            cv_portuguese.pdf
+            cv_english.pdf
