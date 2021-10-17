@@ -28,3 +28,4 @@ jobs:
           files: |
             cv_portuguese.pdf
             cv_english.pdf
+          tag_name: latest
