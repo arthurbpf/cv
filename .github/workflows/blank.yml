@@ -17,7 +17,7 @@ jobs:
       - name: Install latexmk
         run: |
           sudo apt-get update
-          sudo apt-get install latexmk
+          sudo apt-get install texlive-full latexmk
 
       - name: Compiles PDF
         run: latexmk -pdf
