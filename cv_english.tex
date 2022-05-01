@@ -1,12 +1,13 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[12pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{banking} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
-\moderncvcolor{grey}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\moderncvcolor{blue}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 
 \usepackage[scale=0.85]{geometry}
+\usepackage{xpatch}
 
-\name{Arthur}{Fernandes}
-\title{Software developer}
+\name{Arthur}{de Bona Porton Fernandes}
+\title{Software Engineer}
 
 \address{Içara--SC, Brazil}
 \phone[mobile]{+55 (48) 99976-9970}
@@ -15,19 +16,23 @@
 \social[linkedin]{arthurbpf}
 \social[github]{arthurbpf}
 
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip2ex\titlestyle{\huge \@title}}{}{}
+\makeatother
+
 \begin{document}
 
-\maketitle
+\makecvtitle
 
-\section{Summary}
+Arthur is a fullstack software engineer with three years of experience.
 
-Hi, I am a software developer, mainly working with front-end technologies.
-\bigskip
+\section{Skillset}
 
-I have been fascinated by computers ever since I can remember, initially as an entertainment tool, and eventually using them as means to exercise my logical skills and express myself through software. I started coding at school when I was 15 years old and have being doing it ever since.
-\bigskip
-
-Writing software professionally since 2019, I have worked both with back-end and front-end, using languages such as Javascript, Typescript, ReactJs, Ext.Js and C\#.
+\begin{tabular*}{\textwidth}{@{\extracolsep{2mm}} r l}
+	\textbf{Languages} & Typescript, Javascript, C\#, SQL \\
+	\textbf{Technologies} & Node.js, ReactJS, Ext.Js, .NET, Bash \\
+\end{tabular*}
 
 \section{Work experience}
 \cventry{11/2020--Present}{Front-end developer}{Useall Software}{Criciúma--SC, Brazil}{}{Developing software for comercial management of electrical energy distributors, using as main tool the ExtJS framework.}
@@ -35,10 +40,12 @@ Writing software professionally since 2019, I have worked both with back-end and
 \cventry{06/2017--12/2018}{Administrative assistant}{Nova Terra Imóveis (Real estate brokerage)}{Criciúma--SC, Brazil}{}{Operating at the company's administration, customer service and support to the brokers and relations to business partners.}
 
 \section{Education}
-\cventry{2021}{GoStack Bootcamp}{Rocketseat}{Online}{}{Bootcamp focused on web applications development, using Node.js, ReactJs and React Native.}
 \cventry{2019--2023 \makebox{(Expected)}}{Bachelor's degree in computer science}{UNESC}{Criciúma--SC, Brazil}{}{}
 \cventry{2017--2018 \makebox{(Drop-out)}}{Bachelor's degree in civil engineering}{UNESC}{Criciúma--SC, Brazil}{}{}
 \cventry{2015--2016}{Software development technician}{Escola Educacional Técnica SATC}{Criciúma--SC, Brazil}{}{}
 \cventry{2014--2016}{Highschool}{Escola Educacional Técnica SATC}{Criciúma--SC, Brazil}{}{}
+
+\section{Courses \& Bootcamps}
+\cventry{2021}{GoStack Bootcamp}{Rocketseat}{Online}{}{Bootcamp focused on web applications development, using Node.js, ReactJs and React Native.}
 
 \end{document}

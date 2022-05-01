@@ -1,12 +1,12 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{banking} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
-\moderncvcolor{grey}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\moderncvcolor{blue}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 
 \usepackage[scale=0.85]{geometry}
 
 \name{Arthur}{Fernandes}
-\title{Software developer}
+\title{Desenvolvedor de Software}
 
 \address{Içara--SC}
 \phone[mobile]{(48) 99976-9970}
@@ -15,19 +15,25 @@
 \social[linkedin]{arthurbpf}
 \social[github]{arthurbpf}
 
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip2ex\titlestyle{\huge \@title}}{}{}
+\makeatother
+
 \begin{document}
 
-\maketitle
+\makecvtitle
 
 \section{Resumo}
 
-Olá, sou um desenvolvedor de software, trabalhando principalmente com tecnologias front-end.
-\bigskip
+Arthur é um desenvolvedor de software com três anos de experiência.
 
-Fascinado por computadores desde que consigo me lembrar, inicialmente como forma de entretenimento e posteriormente como um meio de exercitar minha capacidade lógica e me expressar através de software. Comecei a programar ainda na escola, aos 15 anos, e venho o fazendo desde então.
-\bigskip
+\section{Skills}
 
-Desenvolvendo software profissionalmente desde 2019, trabalhei tanto com back-end quanto com front-end, utilizando linguagens como JavaScript, TypeScript, ReactJs, Ext.Js e C\#.
+\begin{tabular*}{\textwidth}{@{\extracolsep{2mm}} r l}
+	\textbf{Linguagens} & Typescript, Javascript, C\#, SQL \\
+	\textbf{Tecnologias} & Node.js, ReactJS, Ext.Js, .NET, Bash \\
+\end{tabular*}
 
 \section{Experiência profissional}
 \cventry{11/2020--Presente}{Desenvolvedor front-end}{Useall Software}{Críciuma-SC}{}{Desenvolvendo software voltado para a gestão comercial de distribuídoras de energia elétrica, utilizando o framework ExtJS.}
