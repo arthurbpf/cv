@@ -4,18 +4,17 @@
 \moderncvcolor{blue}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 
 \usepackage[scale=0.85]{geometry}
+\usepackage{xpatch}
 
-\name{Arthur}{Fernandes}
+\name{Arthur}{de Bona Porton Fernandes}
 \title{Desenvolvedor de Software}
 
 \address{Içara--SC}
 \phone[mobile]{(48) 99976-9970}
 \email{arthurbpfernandes@gmail.com}
-
 \social[linkedin]{arthurbpf}
 \social[github]{arthurbpf}
 
-\usepackage{xpatch}
 \makeatletter
 \xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip2ex\titlestyle{\huge \@title}}{}{}
 \makeatother
@@ -23,8 +22,6 @@
 \begin{document}
 
 \makecvtitle
-
-\section{Resumo}
 
 Arthur é um desenvolvedor de software com três anos de experiência.
 
@@ -41,7 +38,6 @@ Arthur é um desenvolvedor de software com três anos de experiência.
 \cventry{06/2017--12/2018}{Auxiliar administrativo}{Nova Terra Imóveis}{Críciuma-SC}{}{Atuando na organização da empresa, atendimento à clientes, suporte à equipe de vendas e relacionamento com as construtoras parceiras.}
 
 \section{Educação}
-\cventry{2021}{GoStack Bootcamp}{Rocketseat}{Online}{}{Bootcamp focado no desenvolvimento de aplicações web utilizando a stack Node.js, ReactJs e React Native.}
 \cventry{2019--2023 \makebox{(Previsto)}}{Bacharelado em Ciência da Computação}{UNESC}{Criciúma--SC}{}{}
 \cventry{2017--2018 \makebox{(Não concluído)}}{Bacharelado em Engenharia Civíl}{UNESC}{Criciúma--SC}{}{}
 \cventry{2015--2016}{Técnico em Informática}{Escola Educacional Técnica SATC}{Criciúma--SC}{}{}
@@ -49,5 +45,8 @@ Arthur é um desenvolvedor de software com três anos de experiência.
 
 \section{Idiomas}
 \cvitemwithcomment{Inglês}{Avançado}{Compreensão, leitura, escrita e fala excelentes. Pontuação no exame TOEIC: 950 de 980 pontos.}
+
+\section{Cursos \& Bootcamps}
+\cventry{2021}{GoStack Bootcamp}{Rocketseat}{Online}{}{Bootcamp focado no desenvolvimento de aplicações web utilizando a stack Node.js, ReactJs e React Native.}
 
 \end{document}
