@@ -29,6 +29,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            Arthur de Bona Porton Fernandes - EN.pdf
-            Arthur de Bona Porton Fernandes - PT_BR.pdf
+            "Arthur de Bona Porton Fernandes - EN.pdf"
+            "Arthur de Bona Porton Fernandes - PT_BR.pdf"
           tag_name: latest
