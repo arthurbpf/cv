@@ -20,15 +20,15 @@ jobs:
           sudo apt-get install texlive-full latexmk
 
       - name: Compiles english version
-        run: latexmk -pdf -jobname="Arthur de Bona Porton Fernandes - EN" cv_english.tex
+        run: latexmk -pdf -jobname="Arthur_Fernandes_EN" cv_english.tex
 
       - name: Compiles portuguese version
-        run: latexmk -pdf -jobname="Arthur de Bona Porton Fernandes - PT_BR" cv_portuguese.tex
+        run: latexmk -pdf -jobname="Arthur_FERNANDES_PT_BR" cv_portuguese.tex
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            "Arthur de Bona Porton Fernandes - EN.pdf"
-            "Arthur de Bona Porton Fernandes - PT_BR.pdf"
+            Arthur_Fernandes_EN.pdf
+            Arthur_FERNANDES_PT_BR.pdf
           tag_name: latest
