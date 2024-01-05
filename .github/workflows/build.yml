@@ -9,26 +9,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v23
+      - uses: cachix/cachix-action@v12
+        with:
+          name: devenv
+        run: nix profile install tarball+https://install.devenv.sh/latest
 
-      - name: Install latexmk
-        run: |
-          sudo apt-get update
-          sudo apt-get install texlive-full latexmk
-
-      - name: Compiles english version
-        run: latexmk -pdf -jobname="Arthur_Fernandes_EN" cv_english.tex
-
-      - name: Compiles portuguese version
-        run: latexmk -pdf -jobname="Arthur_Fernandes_PT_BR" cv_portuguese.tex
+      - name: Compiles PDFs
+        run: devenv shell build
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            Arthur_Fernandes_EN.pdf
-            Arthur_Fernandes_PT_BR.pdf
+            cv_english.pdf
+            cv_portuguese.pdf
           tag_name: latest
