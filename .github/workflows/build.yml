@@ -19,62 +19,32 @@ jobs:
       - name: compile
         run: nix build
 
-            - name: Generate tag
+      - name: Generate tag
+        id: tag
+        run: echo "tag_name=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
 
-              id: tag
+      - name: Create Dated Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            result/cv_english.pdf
+            result/cv_portuguese.pdf
+          tag_name: ${{ steps.tag.outputs.tag_name }}
+          name: CV Build ${{ steps.tag.outputs.tag_name }}
+          body: |
+            Automatically compiled CV PDFs from commit ${{ github.sha }}.
+          draft: false
+          prerelease: false
 
-              run: echo "tag_name=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
-
-      
-
-            - name: Create Dated Release
-
-              uses: softprops/action-gh-release@v1
-
-              with:
-
-                files: |
-
-                  result/cv_english.pdf
-
-                  result/cv_portuguese.pdf
-
-                tag_name: ${{ steps.tag.outputs.tag_name }}
-
-                name: CV Build ${{ steps.tag.outputs.tag_name }}
-
-                body: |
-
-                  Automatically compiled CV PDFs from commit ${{ github.sha }}.
-
-                draft: false
-
-                prerelease: false
-
-      
-
-            - name: Update Latest Release
-
-              uses: softprops/action-gh-release@v1
-
-              with:
-
-                files: |
-
-                  result/cv_english.pdf
-
-                  result/cv_portuguese.pdf
-
-                tag_name: latest
-
-                name: Latest Build
-
-                body: |
-
-                  Stable link to the most recent CV build.
-
-                draft: false
-
-                prerelease: false
-
-      
+      - name: Update Latest Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            result/cv_english.pdf
+            result/cv_portuguese.pdf
+          tag_name: latest
+          name: Latest Build
+          body: |
+            Stable link to the most recent CV build.
+          draft: false
+          prerelease: false
