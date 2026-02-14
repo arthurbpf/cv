@@ -2,8 +2,11 @@ name: Compile LaTeX files
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -23,3 +26,8 @@ jobs:
             result/cv_english.pdf
             result/cv_portuguese.pdf
           tag_name: latest
+          name: Latest Build
+          body: |
+            Automatically compiled CV PDFs from the latest commit.
+          draft: false
+          prerelease: false
