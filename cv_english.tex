@@ -1,12 +1,12 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
 
-\moderncvstyle{banking} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvstyle{classic} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 
 \usepackage[scale=0.85]{geometry}
-\usepackage{xpatch}
+\setlength{\hintscolumnwidth}{3.8cm} % Adjust width for dates to be in a single line
 
-\name{Arthur}{de Bona Porton Fernandes}
+\name{Arthur de Bona Porton Fernandes}{}
 \title{Software Engineer}
 \address{Içara -- SC, Brazil}
 \phone[mobile]{+55 (48) 99976-9970}
@@ -15,69 +15,71 @@
 \social[linkedin]{arthurbpf}
 \social[github]{arthurbpf}
 
-\makeatletter
-\xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip2ex\titlestyle{\huge \@title}}{}{}
-\makeatother
+% Set name to a single color
+\colorlet{color2}{color1}
 
 \begin{document}
 
 \makecvtitle
 
-% \section{Skills}
-% \begin{tabular*}{\textwidth}{@{\extracolsep{2mm}} r l}
-	% \textbf{Languagues} & Typescript, Javascript, C\#, SQL. \\
-	% \textbf{Technologies} & Node.js, ReactJS, Ext.Js, .NET, Git. \\
-% \end{tabular*}
-
 \section{Summary}
-{I am a software engineer with 5+ years of professional experience.
-\\
+{I am a software engineer with 6+ years of professional experience.
+\
 With an interest in technology from a very young age, I've been around computers ever since I can remember. When I first came into contact with programming in my teenage years, I was instantly fascinated. Since then, I have not stopped programming, either for fun or professionally. I found programming to be a valuable skill, and on top of that, it keeps me motivated to deepen my knowledge and push my own limits every day.
-\\
+\
 In 2023, I graduated with a bachelor's degree in computer science. Currently, I'm focusing my studies on the Javascript/Typescript ecosystem, with tools like React, Next.js, React Native, Node.js, Bun, etc.}
 
 \section{Experience}
-\cventry{Feb/2024 -- Present}{Software Engineer}{Monument}{Remote}{}{
+\cventry{Oct/2025 -- Present}{Lead Software Engineer / Tech Lead}{Monument}{Remote}{}{
   \begin{itemize}
-    \item Develop and maintain a full-stack application using NestJS and React.
-    \item Write unit tests with Jest and React Testing Library to ensure code quality and reliability.
-    \item Use AWS services such as SSM, and S3 for application management and data storage.
-    \item Built services to export data to analytics tools, improving data accessibility and analysis capabilities.
-    \item Implemented performance-optimized dashboards, providing users with rich, interactive interfaces to view aggregated data.
-    \item Integrated with payment gateways to enable secure and efficient transaction processing.
-    \item Implemented detailed reports to help users better understand and utilize software-generated data.
+    \item Lead architectural decisions and technical strategy for the development team.
+    \item Mentor team members and enforce code quality standards through rigorous reviews and best practices.
+    \item Oversee the full software development lifecycle (SDLC), ensuring timely delivery of scalable features.
+    \item Drive technical excellence and foster innovation within the engineering culture.
   \end{itemize}
   \bigskip
-  Skills: NestJS · React · Typescript · Jest · React Testing Library · AWS · MySQL · Git
+  Skills: Leadership · Team Mentoring · Software Architecture · NestJS · React · TypeScript · AWS · CI/CD · Code Review
+  \bigskip
+}
+
+\cventry{Feb/2024 -- Oct/2025}{Software Engineer}{Monument}{Remote}{}{
+  \begin{itemize}
+    \item Developed and maintained a full-stack application using NestJS and React.
+    \item Ensured code quality and reliability by writing comprehensive unit tests with Jest and React Testing Library.
+    \item Managed application configuration and data storage using AWS services (SSM, S3).
+    \item Built data export services for analytics tools, significantly improving data accessibility.
+    \item Engineered performance-optimized dashboards to visualize aggregated data.
+    \item Integrated secure payment gateways for efficient transaction processing.
+    \item Implemented detailed reporting features to enhance user data insights.
+  \end{itemize}
+  \bigskip
+  Skills: NestJS · Node.js · React · TypeScript · AWS (S3, SSM) · MySQL · Jest · React Testing Library · Git
   \bigskip
 }
 
 \cventry{Nov/2020 -- Jan/2024}{Software Engineer}{Useall Software}{Criciúma-SC (Remote)}{}{
   \begin{itemize}
-    \item Worked on developing an ERP system focused on the management of electric distribution companies, using C\# and ExtJs.
-    \item Worked on the Virtual Agency system, which served thousands of end consumers of the distributors, allowing self-service in various processes and consultation of important information.
-    \item Worked on the CRM system, designed for customer service in distribution companies.
-    \item Worked on the Commercial system, focused on the back-office management of electricity distributors.
-    \item Made occasional adjustments and optimizations to PL/SQL routines in Oracle Database.
-    \item Trained and mentored new team members in technical development.
+    \item Developed a comprehensive ERP system for electric distribution management using C\# and Ext JS.
+    \item Engineered the "Virtual Agency" system serving thousands of end consumers, enabling self-service for critical processes.
+    \item Built and maintained the CRM and Commercial systems for customer service and back-office management.
+    \item Optimized PL/SQL routines in Oracle Database to improve system performance.
+    \item Mentored and trained new team members in technical development and best practices.
   \end{itemize}
   \bigskip
-  Skills: .NET Framework · .NET Core · C\# · Git · ExtJs · Oracle Database · JavaScript
+  Skills: .NET Framework · .NET Core · C\# · Ext JS · Oracle Database · PL/SQL · JavaScript · Git
   \bigskip
 }
 
 \cventry{07/2019 -- 10/2020}{Progress ABL Engineer}{Agrosys Tecnologia}{Criciúma-SC}{}{
   \begin{itemize}
-    \item Worked on the development of an ERP for animal farms production management, using ProgressABL.
-    \item Wrote code to consolidate farm information for report generation.
-    \item Implemented dashboards for data visualization.
+    \item Developed ERP modules for animal production management using Progress ABL.
+    \item Automated complex report generation by consolidating distributed farm data.
+    \item Designed and implemented data visualization dashboards.
   \end{itemize}
   \bigskip
-  Skills: Linux · Progress 4GL · JavaScript
+  Skills: Progress ABL (4GL) · Linux · JavaScript
   \bigskip
 }
-
-\cventry{06/2017 -- 12/2018}{Office Assistant}{Nova Terra Imóveis}{Criciúma-SC}{}{}
 
 \section{Education}
 \cventry{2019 -- 2023}{Bachelor's degree in computer science}{UNESC  --  Universidade do Extremo Sul Catarinense}{Criciúma -- SC}{}{}

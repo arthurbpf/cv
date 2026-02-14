@@ -1,12 +1,12 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
 
-\moderncvstyle{banking} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvstyle{classic} % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}    % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 
 \usepackage[scale=0.85]{geometry}
-\usepackage{xpatch}
+\setlength{\hintscolumnwidth}{3.8cm} % Ajustar largura para que as datas fiquem em uma única linha
 
-\name{Arthur}{de Bona Porton Fernandes}
+\name{Arthur de Bona Porton Fernandes}{}
 \title{Desenvolvedor Fullstack}
 \address{Içara--SC}
 \phone[mobile]{+55 (48) 99976-9970}
@@ -15,67 +15,81 @@
 \social[linkedin]{arthurbpf}
 \social[github]{arthurbpf}
 
-\makeatletter
-\xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip2ex\titlestyle{\huge \@title}}{}{}
-\makeatother
+% Definir o nome em uma única cor
+\colorlet{color2}{color1}
 
 \begin{document}
 
 \makecvtitle
 
-\section{Skills}
-
-\begin{tabular*}{\textwidth}{@{\extracolsep{2mm}} r l}
-	\textbf{Linguagens} & Typescript, Javascript, C\#, SQL. \\
-	\textbf{Tecnologias} & Node.js, ReactJS, Ext.Js, .NET, Git. \\
-\end{tabular*}
-
 \section{Resumo}
-{Sou um desenvolvedor fullstack com mais de 4 anos de experiência profissional.
-\\
+{Sou um desenvolvedor fullstack com mais de 6 anos de experiência profissional.
+\
 Interessado em tecnologia desde muito jovem, tenho contato com computadores desde que me lembro. Quando entrei em contato com a programação pela primeira vez, na adolescência, fiquei imediatamente fascinado. Desde então, nunca mais parei de programar, seja por diversão ou profissionalmente. Descobri que a programação é uma habilidade valiosa e, que além disso, me mantém motivado a aprofundar meu conhecimento e a superar meus próprios limites diariamente.
-\\
+\
 Em 2023, me formei com um diploma de bacharel em ciência da computação. Atualmente, estou concentrando meus estudos no ecossistema Javascript/Typescript, com ferramentas como React, Next.js, React Native, Node.js, Bun, etc.}
 
 \section{Experiência profissional}
-\cventry{11/2020--Presente}{Desenvolvedor full-stack}{Useall Software}{Criciúma-SC}{}{
-{Na Useall, trabalho desenvolvendo um sistema ERP focado na gestão de distribuidoras de energia elétrica, utilizando C\# para desenvolvimento backend e ExtJs no desenvolvimento frontend. Minhas principais atividades são:}
-\bigskip
-{\begin{itemize}
-  \item Desenvolvimento do sistema Agência Virtual, atendendo os milhares de consumidores finais das distribuidoras, permitindo o autoatendimento em diversos processos, além da consulta de informações importantes.
-  \item Desenvolvimento do sistema CRM, voltado para o atendimento ao cliente nas distribuidoras.
-  \item Desenvolvimento do sistema Comercial, voltado para a gestão de backoffice de processos das distribuidoras.
-  \item Eventuais ajustes e otimização de rotinas PL/SQL - Oracle Database.
-  \item Capacitação e acompanhamento no desenvolvimento técnico de novos membros da equipe.
-\end{itemize}}
-\bigskip
-{Skills: ExtJs · C\# · Oracle Database}
-\bigskip
+\cventry{Out/2025 -- Presente}{Lead Software Engineer / Tech Lead}{Monument}{Remoto}{}{
+  \begin{itemize}
+    \item Liderar decisões de arquitetura e estratégia técnica da equipe de desenvolvimento.
+    \item Mentorar membros da equipe e garantir a qualidade do código através de revisões rigorosas e melhores práticas.
+    \item Supervisionar todo o ciclo de vida de desenvolvimento de software (SDLC), garantindo entregas pontuais e eficientes.
+    \item Impulsionar a excelência técnica e a inovação dentro da cultura de engenharia.
+  \end{itemize}
+  \bigskip
+  Skills: Liderança · Mentoria de Equipe · Arquitetura de Software · NestJS · React · TypeScript · AWS · CI/CD · Code Review
+  \bigskip
 }
 
-\cventry{07/2019--10/2020}{Desenvolvedor Progress ABL}{Agrosys Tecnologia}{Criciúma-SC}{}{
-{Na Agrosys, trabalhei no desenvolvimento de um ERP para a gestão de produção animal, utilizando Progress ABL. Minhas principais atividades eram:}
-\bigskip
-{\begin{itemize}
-  \item Desenvolvimento de processos no ERP para gestão de fazendas animais.
-  \item Código para consolidar as informações das fazendas para a montagem de relatórios.
-  \item Criação de dashboards para visualização de dados.
-\end{itemize}}
-\bigskip
-{Skills: Progress ABL}
-\bigskip
+\cventry{Fev/2024 -- Out/2025}{Engenheiro de Software}{Monument}{Remoto}{}{
+  \begin{itemize}
+    \item Desenvolvi e mantive uma aplicação full-stack utilizando NestJS e React.
+    \item Garanti a qualidade e confiabilidade do código escrevendo testes unitários com Jest e React Testing Library.
+    \item Gerenciei a configuração da aplicação e armazenamento de dados utilizando serviços AWS (SSM, S3).
+    \item Construí serviços de exportação de dados para ferramentas de analytics, melhorando significativamente a acessibilidade.
+    \item Engenhei dashboards otimizados para visualização de dados agregados em tempo real.
+    \item Integrei gateways de pagamento seguros para processamento eficiente de transações.
+    \item Implementei relatórios detalhados para aprimorar os insights dos usuários.
+  \end{itemize}
+  \bigskip
+  Skills: NestJS · Node.js · React · TypeScript · AWS (S3, SSM) · MySQL · Gest · React Testing Library · Git
+  \bigskip
 }
 
-\cventry{06/2017--12/2018}{Auxiliar administrativo}{Nova Terra Imóveis}{Criciúma-SC}{}{Atuando na organização da empresa, atendimento à clientes, suporte à equipe de vendas e relacionamento com as construtoras parceiras.}
+\cventry{Nov/2020 -- Jan/2024}{Engenheiro de Software}{Useall Software}{Criciúma-SC (Remoto)}{}{
+  \begin{itemize}
+    \item Desenvolvi um sistema ERP focado na gestão de distribuidoras de energia elétrica, utilizando C\# e Ext JS.
+    \item Engenhei o sistema "Agência Virtual", atendendo milhares de consumidores finais e permitindo autoatendimento.
+    \item Construí e mantive os sistemas CRM e Comercial para atendimento ao cliente e gestão de back-office.
+    \item Otimizei rotinas PL/SQL no Oracle Database, melhorando a performance do sistema.
+    \item Mentorei e treinei novos membros da equipe no desenvolvimento técnico.
+  \end{itemize}
+  \bigskip
+  {Skills: .NET Framework · .NET Core · C\# · Ext JS · Oracle Database · PL/SQL · JavaScript · Git}
+  \bigskip
+}
+
+\cventry{07/2019 -- 10/2020}{Desenvolvedor Progress ABL}{Agrosys Tecnologia}{Criciúma-SC}{}{
+  \begin{itemize}
+    \item Desenvolvi módulos de ERP para gestão de produção animal utilizando Progress ABL.
+    \item Automatizei a geração de relatórios complexos consolidando dados de fazendas.
+    \item Projetei e implementei dashboards para visualização de dados.
+  \end{itemize}
+  \bigskip
+  {Skills: Progress ABL (4GL) · Linux · JavaScript}
+  \bigskip
+}
 
 \section{Educação}
-\cventry{2019--2023}{Bacharelado em Ciência da Computação}{UNESC -- Universidade do Extremo Sul Catarinense}{Criciúma--SC}{}{}
-\cventry{2017--2018 \makebox{(Não concluído)}}{Bacharelado em Engenharia Civíl}{UNESC -- Universidade do Extremo Sul Catarinense}{Criciúma--SC}{}{}
-\cventry{2015--2016}{Técnico em Informática}{Escola Educacional Técnica SATC}{Criciúma--SC}{}{}
-\cventry{2014--2016}{Ensino médio}{Escola Educacional Técnica SATC}{Criciúma--SC}{}{}
+\cventry{2019 -- 2023}{Bacharelado em Ciência da Computação}{UNESC -- Universidade do Extremo Sul Catarinense}{Criciúma--SC}{}{}
+\cventry{2017 -- 2018 \makebox{(Não concluído)}}{Bacharelado em Engenharia Civíl}{UNESC -- Universidade do Extremo Sul Catarinense}{Criciúma--SC}{}{}
+\cventry{2015 -- 2016}{Técnico em Informática}{Escola Educacional Técnica SATC}{Criciúma--SC}{}{}
+\cventry{2014 -- 2016}{Ensino médio}{Escola Educacional Técnica SATC}{Criciúma--SC}{}{}
 
 \section{Idiomas}
 \cvitemwithcomment{Inglês}{Avançado}{Compreensão, leitura, escrita e fala excelentes. Pontuação no exame TOEIC: 950 de 980 pontos.}
+\cvitemwithcomment{Português}{Nativo}{}
 
 \section{Cursos \& Bootcamps}
 \cventry{2021}{GoStack Bootcamp}{Rocketseat}{Online}{}{Bootcamp focado no desenvolvimento de aplicações web utilizando a stack Node.js, ReactJS e React Native.}
