@@ -24,8 +24,8 @@
         '';
         installPhase = ''
           mkdir -p $out
-          cp cv_english.pdf "$out/Arthur Fernandes - Eng.pdf"
-          cp cv_portuguese.pdf "$out/Arthur Fernandes - Por.pdf"
+          cp cv_english.pdf $out/Arthur_Fernandes_Eng.pdf
+          cp cv_portuguese.pdf $out/Arthur_Fernandes_Por.pdf
         '';
       };
     };
